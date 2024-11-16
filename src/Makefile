@@ -2,9 +2,9 @@
 
 # destination for compiled binaries
 
-@SET_MAKE@
 
-prefix	= @prefix@
+
+prefix	= /usr/local
 exec_prefix	= ${prefix}
 bindir	= ${exec_prefix}/bin
 datadir	= ${prefix}/lib
@@ -15,12 +15,12 @@ SHELL	= /bin/sh
 
 INSTALL_DIRS	= ${bindir} ${datadir}/dada/include ${infodir} ${mandir}/man1
 
-cpp 	= @CPP_LOCATION@
+cpp 	= /usr/bin/cpp
 
-INSTALL	=	@INSTALL@
+INSTALL	=	/usr/bin/install -c
 
 all:	dada
-	@MAKE_REGEXP@
+	
 	$(MAKE) -C src
 	$(MAKE) -C doc
 
